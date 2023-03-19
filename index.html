@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Погода</title>
+        <link rel="icon" type="image/x-icon" href="./src/img/favicon1.png" />
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+            />
+        <link rel="stylesheet" href="./styles/main.css" />
+        <script type="module" src="./index.js"></script>
+    </head>
+
+    <body>
+        <div class="weather_app">
+            <div class="search_container">
+                <form class="search_form">
+                    <input placeholder="Название города" class="search__input"
+                        required type="text" />
+                    <button type="submit" class="sumbit_search
+                        material-symbols-outlined">
+                        search
+                    </button>
+                </form>
+            </div>
+            <div class="stat_container">
+                <div class="tabs__content">
+                    <div class="tabs__item tab__now" id="tab_1">
+                        <div class="now__temp">
+                            <span id="now__temp"></span>&#176
+                        </div>
+                        <img id="now__img" />
+                        <div class="now__city-wrapper">
+                            <div id="now__city"></div>
+                            <button type="button" id="now__cityBtn"
+                                class="material-symbols-outlined" data-id=""
+                                data-saved="">
+                                favorite
+                            </button>
+                        </div>
+                    </div>
+                    <div class="tabs__item tab__details" id="tab_2">
+                        <div class="details__city">
+                            <span id="details__city"></span>
+                        </div>
+                        <div class="details__temp">
+                            Temparature: <span id="details__temp"></span>&#176
+                        </div>
+                        <div class="details__feeltemp">
+                            Feels like: <span id="details__feeltemp"></span>&#176
+                        </div>
+                        <div class="details__windspeed">
+                            Wind: <span id="details__windspeed"></span>
+                        </div>
+                        <div class="details__weather">
+                            Weather: <span id="details__weather"></span>
+                        </div>
+                        <div class="details__sunrise">
+                            Sunrise: <span id="details__sunrise"></span>
+                        </div>
+                        <div class="details__sunset">
+                            Sunset: <span id="details__sunset"></span>
+                        </div>
+                    </div>
+                    <div class="tabs__item tab__forecast active" id="tab_3">
+                        <form class="select__amount-days">
+                            <label for="city-select">Дни прогноза:</label>
+                            <select name="city" id="forecast__amount-days">
+                                <option value="2">2 дня</option>
+                                <option value="3">3 дня</option>
+                                <option value="4">4 дня</option>
+                                <option value="5">5 дней</option>
+                            </select>
+                        </form>
+                        <div class="forecast__container">
+
+                            <template id="templateItem">
+                                <div class="forecast__item">
+                                    <div class="inner__forecast__item-top">
+                                        <div id="forecast__date"></div>
+                                        <div id="forecast__time"></div>
+                                    </div>
+                                    <div class="inner__forecast__item-bottom">
+                                        <div
+                                            class="forecast__temperatureContainer">
+                                            <div>
+                                                Temperature: <span
+                                                    id="forecast__temp"></span>&#176
+                                            </div>
+                                            <div>
+                                                Feels like: <span
+                                                    id="forecast__feels_like"></span>&#176
+                                            </div>
+                                        </div>
+                                        <div class="forecast__weatherContainer">
+                                            <img id="forecast__img">
+                                            <div id="forecast__weather"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs__nav">
+                    <button class="tabs__nav-btn" type="button"
+                        data-tab="#tab_1">
+                        Now
+                    </button>
+                    <button class="tabs__nav-btn" type="button"
+                        data-tab="#tab_2">
+                        Details
+                    </button>
+                    <button class="tabs__nav-btn active" type="button"
+                        data-tab="#tab_3">
+                        Forecast
+                    </button>
+                </div>
+            </div>
+            <div class="locations_container">
+                <div class="title_locations">Added Locations</div>
+                <ul class="list_locations"></ul>
+            </div>
+        </div>
+
+    </body>
+
+</html>
