@@ -30,8 +30,8 @@ const selectDays = document.querySelector('#forecast__amount-days');
 //Константы для панели добавленных городов
 const locations__list = document.querySelector(".list_locations");
 
-const weatherUrl = "http://api.openweathermap.org/data/2.5/weather";
-const forecastUrl = "http://api.openweathermap.org/data/2.5/forecast";
+const weatherUrl = "https://api.openweathermap.org/data/2.5/weather";
+const forecastUrl = "https://api.openweathermap.org/data/2.5/forecast";
 const apiKey = "4ffd32aaf968b4c03c60829ec4d46eb1";
 
 export {
